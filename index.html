@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>To-do web</title>
+ <link rel="shortcut icon" href="./to-do-list.png" type="image/x-icon">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+ 
+ <script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-app.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-database.js"></script>
+ 
+ <style>
+* {
+  text-align: center;
+  box-sizing: border-box;
+}
+li {
+  list-style: none;
+  margin: 10px 0;
+}
+h1 {
+  font-size: 60px;
+  margin-bottom: 40px;
+  color: #13543E;
+}
+div {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+.main {
+  background-color: rgb(174, 250, 224);
+  display: inline-block;
+  width: 90%;
+  max-width: 720px;
+  margin-top: 5rem;
+  border-radius: 10px;
+  padding: 20px;
+}
+input {
+  margin: 4px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: 1px solid gray;
+  width: 80%;
+  max-width: 250px;
+}
+button {
+  font-size: 16px;
+  margin: 4px;
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+#add {
+  color: white;
+  background-color: #13543E;
+}
+#delete {
+  color: white;
+  background-color: rgb(204, 0, 0);
+}
+.deletebtn {
+  background-color: rgb(204, 0, 0);
+  color: white;
+  margin-left: 10px;
+}
+.Editbtn {
+  background-color: #f0ad4e;
+  color: white;
+  margin-left: 5px;
+}
+@media (max-width: 600px) {
+  h1 {
+    font-size: 40px;
+  }
+  .main {
+    width: 95%;
+    padding: 15px;
+  }
+  input {
+    width: 100%;
+  }
+}
+ </style>
+</head>
+<body>
+<div class="main">
+ <div>
+  <h1>To-do app</h1>
+ </div>
+ <div>
+  <input type="text" id="todo" placeholder="Enter a task">
+  <button id="add" onclick="addtodo()">
+    <i class="fa-solid fa-plus"></i> Add
+  </button>
+  <button id="delete" onclick="deleteallTodo()">
+    <i class="fa-solid fa-trash"></i> Delete All
+  </button>
+ </div>
+ <div>
+  <ol id="itemlist"></ol>
+ </div>
+</div>
+
+
+<script src="app.js"></script>
+</body>
+</html>
